@@ -15,12 +15,12 @@
 
   <style>
     :root{
-      --ink:#111026;              /* texte principal, plus sombre que site 2 */
-      --ink-2:#4A4962;            /* texte secondaire */
-      --bg:#ffffff;               /* blanc propre */
+      --ink:#111026;            /* texte principal */
+      --ink-2:#4A4962;          /* texte secondaire */
+      --bg:#FAF7F0;             /* blanc sable luxueux */
       --muted:#8A8AA0;
-      --accent:#7C3AED;           /* violet luxe (différent du cyan du site 2) */
-      --accent-2:#F59E0B;         /* ambre subtil */
+      --accent:#7C3AED;         /* violet luxe */
+      --accent-2:#F59E0B;       /* ambre subtil */
       --line:#ECECF3;
       --card:#ffffff;
       --shadow:0 18px 40px rgba(17,16,38,.08);
@@ -67,7 +67,7 @@
     .drawer-body{padding:12px 6px;display:flex;flex-direction:column}
     .drawer-body a{padding:16px 18px;border-bottom:1px solid var(--line);font-weight:800}
 
-    /* Hero (style différent) */
+    /* Hero */
     .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);isolation:isolate}
     .hero .container{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;min-height:76vh;align-items:center;padding-block:92px}
     h1{font-family:"Playfair Display",serif;font-weight:700;font-size:clamp(30px,6vw,64px);line-height:1.06;margin:0 0 14px}
@@ -77,7 +77,7 @@
     .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:.4rem .8rem;margin-bottom:10px;font-weight:800}
     .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
 
-    /* halos parallaxe (différents du site 2) */
+    /* halos parallaxe */
     .px1,.px2,.px3{position:absolute;inset:auto;pointer-events:none;border-radius:50%}
     .px1{right:-60px;bottom:-60px;width:280px;height:280px;background:radial-gradient(closest-side, rgba(124,58,237,.20), transparent 70%);filter:blur(16px)}
     .px2{left:-90px;top:-90px;width:340px;height:340px;background:radial-gradient(closest-side, rgba(245,158,11,.20), transparent 70%);filter:blur(18px)}
@@ -90,11 +90,11 @@
 
     /* Services */
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;box-shadow:var(--shadow)}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--card);box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px;font-size:18px}
-    .pill{display:inline-flex;align-items:center;gap:8px;padding:.35rem .7rem;border-radius:999px;border:1px solid var(--line);font-size:12px;color:#6B6B85}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:.35rem .7rem;border-radius:999px;border:1px solid var(--line);font-size:12px;color:#6B6B85;background:#fff}
 
-    /* Projets (portfolio) */
+    /* Projets */
     .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
     .project{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
     .project .cover{width:100%;aspect-ratio:16/11;object-fit:cover}
@@ -119,6 +119,7 @@
     .foot .logo-mark{width:28px;height:28px;border-radius:8px;background:conic-gradient(from 180deg,var(--accent),#A78BFA,#C4B5FD)}
     .foot .meta{margin-top:8px;color:#7A839B;font-size:14px}
     .foot .credit{margin-top:10px;font-size:14px;color:#8C97B3}
+    .foot a{color:inherit;text-decoration:underline}
 
     /* Back-to-top */
     .to-top{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:.25s;z-index:70}
@@ -130,7 +131,6 @@
       .grid-3,.projects,.steps,.quotes{grid-template-columns:1fr}
       nav{display:none}
       .hamburger{display:flex}
-      /* boutons plus compacts sur mobile */
       .btn{padding:.5rem .85rem;font-size:13px;border-radius:10px}
       .btn.primary{padding:.6rem 1rem;font-size:13px}
     }
@@ -154,7 +154,6 @@
         </ul>
       </nav>
       <div class="actions">
-        <!-- Pas de boutons en-tête; seulement langue + menu mobile -->
         <button class="lang" id="langSwitch" aria-label="Changer de langue">FR / EN</button>
         <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu">
           <span></span><span></span><span></span>
@@ -192,11 +191,12 @@
       </div>
       <div class="hero-visual">
         <img
-          src="https://picsum.photos/id/1080/1200/800"
-          srcset="https://picsum.photos/id/1080/800/533 800w, https://picsum.photos/id/1080/1200/800 1200w, https://picsum.photos/id/1080/1600/1067 1600w"
+          src="https://picsum.photos/seed/atelier-hero/1200/800"
+          srcset="https://picsum.photos/seed/atelier-hero/800/533 800w, https://picsum.photos/seed/atelier-hero/1200/800 1200w, https://picsum.photos/seed/atelier-hero/1600/1067 1600w"
           sizes="(max-width: 980px) 100vw, 48vw"
           alt="Intérieur minimaliste avec lumière naturelle"
           width="1200" height="800"
+          referrerpolicy="no-referrer"
           loading="eager" fetchpriority="high" decoding="async"/>
         <div class="px1" aria-hidden="true"></div>
         <div class="px2" aria-hidden="true"></div>
@@ -239,10 +239,10 @@
       <div class="projects">
         <article class="project" aria-labelledby="pr1">
           <img class="cover"
-               src="https://picsum.photos/id/1019/1200/825"
-               srcset="https://picsum.photos/id/1019/640/440 640w, https://picsum.photos/id/1019/960/660 960w, https://picsum.photos/id/1019/1200/825 1200w"
+               src="https://picsum.photos/seed/duplex-haussmann/1200/825"
+               srcset="https://picsum.photos/seed/duplex-haussmann/640/440 640w, https://picsum.photos/seed/duplex-haussmann/960/660 960w, https://picsum.photos/seed/duplex-haussmann/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Duplex Haussmann — salon">
+               width="1200" height="825" alt="Duplex Haussmann — salon" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="pr1">Duplex Haussmann</h3>
             <div class="meta"><span>Paris 8e</span><span>120 m² • 2025</span></div>
@@ -250,10 +250,10 @@
         </article>
         <article class="project" aria-labelledby="pr2">
           <img class="cover"
-               src="https://picsum.photos/id/1031/1200/825"
-               srcset="https://picsum.photos/id/1031/640/440 640w, https://picsum.photos/id/1031/960/660 960w, https://picsum.photos/id/1031/1200/825 1200w"
+               src="https://picsum.photos/seed/flagship-retail/1200/825"
+               srcset="https://picsum.photos/seed/flagship-retail/640/440 640w, https://picsum.photos/seed/flagship-retail/960/660 960w, https://picsum.photos/seed/flagship-retail/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Flagship retail — comptoir sculptural">
+               width="1200" height="825" alt="Flagship retail — comptoir sculptural" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="pr2">Flagship retail</h3>
             <div class="meta"><span>Lyon</span><span>350 m² • 2024</span></div>
@@ -261,10 +261,10 @@
         </article>
         <article class="project" aria-labelledby="pr3">
           <img class="cover"
-               src="https://picsum.photos/id/1040/1200/825"
-               srcset="https://picsum.photos/id/1040/640/440 640w, https://picsum.photos/id/1040/960/660 960w, https://picsum.photos/id/1040/1200/825 1200w"
+               src="https://picsum.photos/seed/villa-horizon/1200/825"
+               srcset="https://picsum.photos/seed/villa-horizon/640/440 640w, https://picsum.photos/seed/villa-horizon/960/660 960w, https://picsum.photos/seed/villa-horizon/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Villa Horizon — cuisine ouverte">
+               width="1200" height="825" alt="Villa Horizon — cuisine ouverte" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="pr3">Villa Horizon</h3>
             <div class="meta"><span>Marseille</span><span>210 m² • 2025</span></div>
@@ -326,10 +326,10 @@
       <div class="projects">
         <article class="project" aria-labelledby="b1">
           <img class="cover"
-               src="https://picsum.photos/id/1050/1200/825"
-               srcset="https://picsum.photos/id/1050/640/440 640w, https://picsum.photos/id/1050/960/660 960w, https://picsum.photos/id/1050/1200/825 1200w"
+               src="https://picsum.photos/seed/palette-textures/1200/825"
+               srcset="https://picsum.photos/seed/palette-textures/640/440 640w, https://picsum.photos/seed/palette-textures/960/660 960w, https://picsum.photos/seed/palette-textures/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Palette matériaux">
+               width="1200" height="825" alt="Palette matériaux" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="b1" data-i18n="blog.p1.t">Palette & textures</h3>
             <p data-i18n="blog.p1.d">Minéral, bois, métal : harmoniser sans alourdir.</p>
@@ -338,10 +338,10 @@
         </article>
         <article class="project" aria-labelledby="b2">
           <img class="cover"
-               src="https://picsum.photos/id/1060/1200/825"
-               srcset="https://picsum.photos/id/1060/640/440 640w, https://picsum.photos/id/1060/960/660 960w, https://picsum.photos/id/1060/1200/825 1200w"
+               src="https://picsum.photos/seed/lumiere-volumes/1200/825"
+               srcset="https://picsum.photos/seed/lumiere-volumes/640/440 640w, https://picsum.photos/seed/lumiere-volumes/960/660 960w, https://picsum.photos/seed/lumiere-volumes/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Lumière et volumes">
+               width="1200" height="825" alt="Lumière et volumes" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="b2" data-i18n="blog.p2.t">Lumière & volumes</h3>
             <p data-i18n="blog.p2.d">Jouer les profondeurs avec des coupes simples.</p>
@@ -350,10 +350,10 @@
         </article>
         <article class="project" aria-labelledby="b3">
           <img class="cover"
-               src="https://picsum.photos/id/1070/1200/825"
-               srcset="https://picsum.photos/id/1070/640/440 640w, https://picsum.photos/id/1070/960/660 960w, https://picsum.photos/id/1070/1200/825 1200w"
+               src="https://picsum.photos/seed/details-sur-mesure/1200/825"
+               srcset="https://picsum.photos/seed/details-sur-mesure/640/440 640w, https://picsum.photos/seed/details-sur-mesure/960/660 960w, https://picsum.photos/seed/details-sur-mesure/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
-               width="1200" height="825" alt="Détails sur mesure">
+               width="1200" height="825" alt="Détails sur mesure" referrerpolicy="no-referrer">
           <div class="content">
             <h3 id="b3" data-i18n="blog.p3.t">Détails sur mesure</h3>
             <p data-i18n="blog.p3.d">Quand la menuiserie fait l’identité d’un lieu.</p>
@@ -377,7 +377,7 @@
     </section>
   </main>
 
-  <!-- Footer (identique à tes sites précédents) -->
+  <!-- Footer -->
   <footer>
     <div class="foot" role="contentinfo">
       <div class="brand">
@@ -386,7 +386,7 @@
       </div>
       <div class="meta" data-i18n="footer.addr">Adresse fictive (démo). Horaires : L-S 09:00-18:00.</div>
       <div class="meta">© <span id="year"></span> Atelier Orphée — <span data-i18n="footer.rights">Tous droits réservés</span>.</div>
-      <div class="credit">Site de démonstration créé par <strong>Martial HOSSOU</strong>, CEO de <strong>CREATIVE ENTREPRISE</strong>.</div>
+      <div class="credit">Site de démonstration créé par <strong>Martial HOSSOU</strong>, CEO de <a href="https://facebook.com/creativeentreprise" target="_blank" rel="noopener"><strong>CREATIVE ENTREPRISE</strong></a>.</div>
       <div style="margin-top:14px"><button class="lang" id="langSwitch2" aria-label="Changer de langue (pied)">FR / EN</button></div>
     </div>
   </footer>
@@ -420,7 +420,7 @@
     window.addEventListener('scroll', visToTop, {passive:true});
     toTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
 
-    // Parallaxe (halos + zoom/translation image)
+    // Parallaxe
     const halos = document.querySelectorAll('.px1,.px2,.px3');
     const heroImg = document.querySelector('.hero-visual img');
     function parallax(){
