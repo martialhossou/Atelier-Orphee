@@ -90,7 +90,7 @@
 
     /* Services */
     .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-    .card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--card);box-shadow:var(--shadow)}
+    .card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff;box-shadow:var(--shadow)}
     .card h3{margin:0 0 8px;font-size:18px}
     .pill{display:inline-flex;align-items:center;gap:8px;padding:.35rem .7rem;border-radius:999px;border:1px solid var(--line);font-size:12px;color:#6B6B85;background:#fff}
 
@@ -111,53 +111,44 @@
     blockquote{margin:0;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;box-shadow:var(--shadow)}
     blockquote footer{color:#6E6E85;font-size:14px;padding-top:8px}
 
-   /* Footer */
-footer{
-  padding-block:48px;
-  border-top:1px solid var(--line);
-  background:#fff;
-  color:#485067
-}
-.foot{
-  max-width:var(--maxw);
-  margin:auto;
-  text-align:center;
-  padding-inline:24px;
-  width:100%;
-}
-.foot .brand{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin-bottom:10px;
-}
-.foot .logo{
-  font-family:"Playfair Display",serif;
-  font-weight:700;
-  font-size:18px;
-}
-.foot .logo-mark{
-  width:26px;
-  height:26px;
-  border-radius:8px;
-  background:conic-gradient(from 180deg,var(--accent),#A78BFA,#C4B5FD);
-}
-.foot .meta{
-  margin-top:6px;
-  color:#7A839B;
-  font-size:14px;
-}
-.foot .credit{
-  margin-top:10px;
-  font-size:14px;
-  color:#8C97B3;
-}
-.foot a{
-  color:inherit;
-  text-decoration:underline;
-}
-
+    /* Footer (alignement centré, propre) */
+    footer{
+      padding-block:48px;border-top:1px solid var(--line);background:#fff;color:#485067
+    }
+    .foot{
+      max-width:var(--maxw);
+      margin:0 auto;
+      padding:0 24px;
+      width:100%;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+    }
+    .foot .brand{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      margin:0 0 10px 0;
+    }
+    .foot .logo{
+      font-family:"Playfair Display",serif;
+      font-weight:700;
+      font-size:18px;
+    }
+    .foot .logo-mark{
+      width:26px;height:26px;border-radius:8px;
+      background:conic-gradient(from 180deg,var(--accent),#A78BFA,#C4B5FD);
+    }
+    .foot .meta{
+      margin-top:6px;color:#7A839B;font-size:14px
+    }
+    .foot .credit{
+      margin-top:10px;font-size:14px;color:#8C97B3
+    }
+    .foot a{color:inherit;text-decoration:underline}
 
     /* Back-to-top */
     .to-top{position:fixed;right:18px;bottom:18px;width:48px;height:48px;border-radius:999px;border:1px solid var(--line);background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;opacity:0;visibility:hidden;transition:.25s;z-index:70}
@@ -287,8 +278,8 @@ footer{
           </div>
         </article>
         <article class="project" aria-labelledby="pr2">
-          <img class="cover"
-               src="https://picsum.photos/seed/flagship-retail/1200/825"
+          <img class="cover
+               " src="https://picsum.photos/seed/flagship-retail/1200/825"
                srcset="https://picsum.photos/seed/flagship-retail/640/440 640w, https://picsum.photos/seed/flagship-retail/960/660 960w, https://picsum.photos/seed/flagship-retail/1200/825 1200w"
                sizes="(max-width: 980px) 96vw, 31vw"
                width="1200" height="825" alt="Flagship retail — comptoir sculptural" referrerpolicy="no-referrer">
@@ -424,8 +415,13 @@ footer{
       </div>
       <div class="meta" data-i18n="footer.addr">Adresse fictive (démo). Horaires : L-S 09:00-18:00.</div>
       <div class="meta">© <span id="year"></span> Atelier Orphée — <span data-i18n="footer.rights">Tous droits réservés</span>.</div>
-      <div class="credit">Site de démonstration créé par <strong>Martial HOSSOU</strong>, CEO de <a href="https://facebook.com/creativeentreprise" target="_blank" rel="noopener"><strong>CREATIVE ENTREPRISE</strong></a>.</div>
-      <div style="margin-top:14px"><button class="lang" id="langSwitch2" aria-label="Changer de langue (pied)">FR / EN</button></div>
+      <div class="credit">
+        Site de démonstration créé par <strong>Martial HOSSOU</strong>, CEO de
+        <a href="https://facebook.com/creativeentreprise" target="_blank" rel="noopener"><strong>CREATIVE ENTREPRISE</strong></a>.
+      </div>
+      <div style="margin-top:14px">
+        <button class="lang" id="langSwitch2" aria-label="Changer de langue (pied)">FR / EN</button>
+      </div>
     </div>
   </footer>
 
